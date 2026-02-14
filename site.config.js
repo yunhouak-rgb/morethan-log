@@ -1,37 +1,36 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "morethanmin",
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "frontend developer",
-    bio: "I develop everything using node.",
-    email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
-    instagram: "",
+    name: "당글",
+    image: "/avatar.svg", // 나중에 본인 사진으로 변경 가능합니다.
+    role: "취준생, 신입사원의 팅커벨",
+    bio: "취업 콘텐츠와 성장을 기록하는 공간입니다.",
+    email: "yuncontest@naver.com",
+    threads: "dang_guel",
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: `당글의 노션 블로그`,
+      href: "https://dangguel.netlify.app",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
-    scheme: "dark", // 'light' | 'dark' | 'system'
+    title: "당글 로그 (Dangguel Log)",
+    description: "취업 준비부터 신입사원 적응기까지, 당글의 성장 기록",
+    scheme: "system", // 'light' | 'dark' | 'system'
   },
 
-  // CONFIG configration (required)
-  link: "https://morethan-log.vercel.app",
-  since: 2022, // If leave this empty, current year will be used.
-  lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
-  ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
+  // CONFIG configuration (required)
+  link: "https://dangguel.netlify.app",
+  since: 2024, // 시작 연도
+  lang: "ko-KR", // 한국어로 설정 변경
+  ogImageGenerateURL: "https://og-image-korean.vercel.app", 
 
   // notion configuration (required)
   notionConfig: {
-    pageId: process.env.NOTION_PAGE_ID,
+    // 여기에 확인하신 32자리 ID를 직접 입력했습니다.
+    pageId: "30668b320acc81acab92febfb8bf2f7e",
   },
 
   // plugin configuration (optional)
@@ -56,7 +55,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
+      repo: "yunhouak-rgb/morethan-log", // 댓글이 저장될 본인의 깃허브 저장소 이름
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
@@ -65,11 +64,11 @@ const CONFIG = {
     enable: false,
     config: {
       host: "https://cusdis.com",
-      appid: "", // Embed Code -> data-app-id value
+      appid: "", 
     },
   },
-  isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
-  revalidateTime: 21600 * 7, // revalidate time for [slug], index
+  isProd: process.env.VERCEL_ENV === "production", 
+  revalidateTime: 21600 * 7, 
 }
 
 module.exports = { CONFIG }
